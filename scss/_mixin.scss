@@ -1,0 +1,12 @@
+
+@mixin tempbox {
+  border: 1px solid red;
+}
+
+@mixin Hamburger {
+  height: 2px;
+  width:35px;
+  border-radius: 35px;
+  position: absolute;
+  background: $hamburger-color;
+}
