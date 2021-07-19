@@ -10,7 +10,7 @@ const watcher = chokidar.watch("./src", {
   persistent: true
 })
 
-chokidar.watch("./src").on("change", (path) => {
+watcher.on("change", (path) => {
   console.log(path);
   shell.exec('node ./main.js');
 });
