@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node watch.js",
-    "build" : "node gh-pages.js"
+    "start": "node run.js",
+    "deploy": "cd utils && node gh-pages.js",
+    "sass": "node-sass --watch src/scss -o dist/css --output-style compressed"
   },
   "author": "Nischay Sharma",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "chokidar": "^3.5.2",
     "ejs": "^3.1.6",
     "gh-pages": "^3.2.3",
+    "node-sass": "^6.0.1",
     "shelljs": "^0.8.4"
   }
 }
