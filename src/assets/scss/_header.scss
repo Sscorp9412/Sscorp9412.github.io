@@ -1,0 +1,30 @@
+.header{
+  display: flex;
+  padding: 1.5rem;
+  
+  .hamburger{
+    padding: 1rem;
+    // padding-right: 3rem;
+    margin-left: auto;
+    margin-right: 10px;
+    cursor: pointer;
+    z-index: 2;
+
+    &__icon{
+      @include Hamburger;
+
+      &::before{
+        content: '';
+        @include Hamburger;
+        transform: translate(-10px, 10px);
+      }
+
+      &::after{
+        content: '';
+        @include Hamburger;
+        width: 25px;
+        transform: translate(-10px, -10px);
+      }
+    }
+  }
+}

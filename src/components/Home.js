@@ -1,5 +1,5 @@
 
-const Home = ({name, salutation, tagline}) => {
+exports.Home = ({name, salutation, tagline}) => {
   return `
   <div class="page">
     <div class="header">
@@ -10,8 +10,8 @@ const Home = ({name, salutation, tagline}) => {
       </div>
     </div>
 
-    <div id="page1" class="page1">
-      <div class="page1__intro">
+    <div id="home" class="home">
+      <div class="home__intro">
         <h1 class="salutation">${salutation},</h1>
         <h3 class="address">I'm ${name}</h3>
         <h3 class="quotation">${tagline}</h3>
@@ -20,5 +20,3 @@ const Home = ({name, salutation, tagline}) => {
   </div>
   `
 }
-
-exports.Home = Home;

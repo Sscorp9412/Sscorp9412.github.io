@@ -1,13 +1,9 @@
 const { Home } = require('./components/Home');
-
-const data = {
-  name: 'Nischay',
-  salutation: 'Hey',
-  tagline: 'Welcome to my portfolio'
-}
+const { Body } = require('./components/Body');
+const personal = require('./assets/data/personal.json');
 
 const App = () => {
-  return `${Home(data)}`
+  return `${Body(Home(personal))}`
 };
 
 exports.App = App;

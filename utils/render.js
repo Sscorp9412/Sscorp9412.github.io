@@ -1,5 +1,6 @@
 const fs = require("fs");
 const ejs = require("ejs");
+const shell = require('shelljs');
 
 const { Index } = require("../src/index");
 
@@ -10,11 +11,12 @@ function renderContent(filepath, html) {
     if (err) throw err;
     else {
       console.log("compiled successfully...");
-      ejsRenderer("./src/public/index.ejs", (generatedTemplate) => {
-        createFolder("./dist");
-        createFolder("./dist/css")
-        fs.writeFileSync("./dist/index.html", generatedTemplate);
-      });
+      createFolder("./dist");
+      createFolder("./dist/css");
+      shell.exec("cp -r ./src/assets/images ./dist")
+      fs.writeFileSync("./dist/index.html", html);
+      // ejsRenderer("./src/public/index.ejs", (generatedTemplate) => {
+      // });
     }
   });
 }
@@ -36,8 +38,19 @@ const createFolder = (path) => {
 
 // minify
 function minify(html) {
-  // Removes Extra spaces
-  return html.replace(/\s+/g, " ");
+  /*
+    -------------------
+    Removes Extra spaces
+    -------------------*/
+  const removedSpace = html.replace(/\s+/g, " ");
+
+  /*
+    ------------
+    Add Elements
+    ------------*/
+
+  const minified = html.replace(/> <+/g, "><");
+  return minified;
 }
 
 var crudeTemplate = Index();

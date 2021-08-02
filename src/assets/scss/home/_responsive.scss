@@ -1,0 +1,18 @@
+// responsive home
+
+@media screen and (max-width: 576px){ 
+  .home{
+    #{&}__intro{
+      .salutation{
+        font-size: 2rem;
+      }
+
+      .address{
+        font-size: 2rem;
+      }
+      .quotation{
+        font-size: 1rem;
+      }
+    }
+  }
+}
