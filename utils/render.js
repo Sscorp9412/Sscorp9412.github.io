@@ -1,12 +1,10 @@
 const fs = require("fs");
 const ejs = require("ejs");
 const shell = require('shelljs');
-
 const { Index } = require("../src/index");
 
 // converting template to html
 function renderContent(filepath, html) {
-  createFolder("./.temp");
   fs.writeFile(filepath, html, (err) => {
     if (err) throw err;
     else {
@@ -15,8 +13,6 @@ function renderContent(filepath, html) {
       createFolder("./dist/css");
       shell.exec("cp -r ./src/assets/images ./dist")
       fs.writeFileSync("./dist/index.html", html);
-      // ejsRenderer("./src/public/index.ejs", (generatedTemplate) => {
-      // });
     }
   });
 }
