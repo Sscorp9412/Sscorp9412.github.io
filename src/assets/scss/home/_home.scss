@@ -1,14 +1,14 @@
 .home{
   width: 100%;
   height: 100vh;
-  background: $background;
-  background-size: cover;
-  position: fixed;
-  top: 0;
-  left: 0;
+  @include background(false);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 
   #{&}__intro{
     font-family: $font-main;
@@ -24,4 +24,5 @@
       font-weight: 600;
     }
   }
+
 }

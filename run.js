@@ -8,15 +8,20 @@ const compileHtml = "node ./utils/render.js"
 const compileSass = "node-sass src/assets/scss -o dist/css --output-style compressed"
 
 const build = () => {
-  shell.exec(compileHtml);
-  shell.exec(compileSass);
-  shell.exec("cp -r ./src/assets/images ./dist");
+  shell.exec('clear');
+  console.log('Compiling...');
+  setTimeout( () => {
+    shell.exec('clear');
+    shell.exec(compileSass);
+    shell.exec("cp -r ./src/assets/images ./dist");
+    shell.exec(compileHtml);
+  }, 1000);
 }
 
 if(process.argv[2] === "dev"){
   console.log(" Development Compiler started... ");
   const watcher = chokidar.watch("./src", {
-    ignored: /(^|[\/\\])\../, // ignore dotfiles
+    ignored: [/(^|[\/\\])\../], // ignore dotfiles
     persistent: true
   })
   

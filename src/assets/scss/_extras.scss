@@ -1,0 +1,14 @@
+.fizz{
+  @include fizz;
+}
+
+.scroll-down{
+  position: absolute;
+  // bottom: 0;
+  transform: translate(80vw, -200px);
+  // right: 120px;
+  font-family: $font-main;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #fff;
+}

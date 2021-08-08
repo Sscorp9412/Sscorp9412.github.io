@@ -5,25 +5,20 @@ const { Index } = require("../src/index");
 
 // converting template to html
 function renderContent(html) {
-  console.log("compiled successfully...");
+  // console.log("compiled successfully...");
   createFolder("./dist");
   createFolder("./dist/css");
   shell.exec("cp -r ./src/assets/images ./dist")
   fs.writeFileSync("./dist/index.html", html);
 }
 
-// Ejs file rendering
-async function ejsRenderer(filepath, callback) {
-  const generatedTemplate = await ejs.renderFile(filepath);
-  callback(generatedTemplate);
-}
-
 // Create folder
 const createFolder = (path) => {
   try {
     fs.mkdirSync(path);
+    console.log('Folder', path, 'created');
   } catch (err) {
-    console.log("folder exists");
+    // console.log("folder exists");
   }
 };
 

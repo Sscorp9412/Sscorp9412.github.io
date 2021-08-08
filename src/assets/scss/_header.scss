@@ -1,6 +1,9 @@
 .header{
   display: flex;
   padding: 1.5rem;
+  position: fixed;
+  top: 0;
+  right: 10px;
   
   .hamburger{
     padding: 1rem;
@@ -26,5 +29,25 @@
         transform: translate(-10px, -10px);
       }
     }
+
+    &:active{
+      animation: twist 3s linear infinite;
+      transform: rotateY(360deg);
+    }
+  }
+}
+
+@keyframes twist {
+
+  0%{
+    transform: rotateY(0deg);
+  }
+  
+  50%{
+    transform: rotateY(360deg);
+  }
+
+  100%{
+    transform: rotateY(0deg);
   }
 }

@@ -1,8 +1,8 @@
 const { Scroll } = require("./Scroll")
 
-exports.About = () => {
-  return `<div class="page about">
+exports.Projects = () => {
+  return `<div class="projects">
   <div class="fizz"></div>
-  ${Scroll()}
+  ${Scroll()};
   </div>`
 }

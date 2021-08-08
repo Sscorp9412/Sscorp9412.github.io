@@ -2,6 +2,7 @@
 
 @media screen and (max-width: 576px){ 
   .home{
+    @include background(true);
     #{&}__intro{
       .salutation{
         font-size: 2rem;

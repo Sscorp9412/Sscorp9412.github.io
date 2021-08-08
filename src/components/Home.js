@@ -1,15 +1,8 @@
+const { Scroll } = require('./Scroll');
 
 exports.Home = ({name, salutation, tagline}) => {
   return `
-  <div class="page">
-    <div class="header">
-      <div class="hamburger">
-        <div class="content">
-          <span class="hamburger__icon"></span>
-        </div>
-      </div>
-    </div>
-
+  <div class="page home">
     <div id="home" class="home">
       <div class="home__intro">
         <h1 class="salutation">${salutation},</h1>
