@@ -1,4 +1,4 @@
-exports.Scroll = () => {
-  const text = 'Please Scroll Down';
-  return `<p class="scroll-down">${text.toUpperCase()}</p>`
+exports.Scroll = (link) => {
+  const text = 'Kindly Scroll Down';
+  return `<a href="${link || "#"}" class="scroll-down">${text}</a>`
 }
